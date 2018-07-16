@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{bioinf}
+\author{Ivan Mihajlin}
+\date{July 2018}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Formulation closest to the actual process}
+
+Bellow, we provide the description of a valid phylogenetic tree with references $S_1 \dots S_k \in A^p$, where $A$ is the alphabet:
+
+A phylogenetic tree with references $S_1 \dots S_k \in A^m$ is a tree where each node has a label $\in A^q$. For each node except for the root, the label can be produced from its par rent's label by replacing a substring with a substring (of the same size?) from one of the reference strings.
+
+The phylogenetic tree with references recovery problem can be described as following: one is given a set $R$ of reference strings as well as an additional set $T$ of strings. One needs to output the best under some parameterization phylogenetic tree with references $S_1 \dots S_k$, that has every string from $T$ as a label of some of the nodes. 
+
+
+\section{More sloppy formulation}
+
+In this section, we are trying to provide a less consistent with the actual biology, but more tractable algorithmically formulation. We will assume that references are distinct enough so we can always understand which piece of a label is coming from which reference:
+
+A phylogenetic tree with implicit references is a tree where each node has a label $\in [0 \dots k]^*$. The root is labeled with $"0"$. For each node except for the root, the label can be produced from its parent's label by replacing a substring (including a zero size substring) with a symbol from $[1 \dots k]$.
+
+The phylogenetic tree with implicit references recovery problem can be described as following: one is given a set $T$ of strings $\in [0 \dots k]^*$. One needs to output the best under some parameterization phylogenetic tree with implicit references, that has every string from $T$ as a label of some of the nodes. 
+
+
+\end{document}
+
